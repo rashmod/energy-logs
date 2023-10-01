@@ -5,9 +5,7 @@ import transformData from './transformData';
 async function insertData(dataArray: DataDocument[]) {
 	const dbURI = process.env.DB_URI;
 	if (!dbURI) throw new Error('Add database uri to environment variables');
-	const client = new MongoClient(
-		'mongodb+srv://bhushan:-$*DwuM4R$ZXazW@cluster0.thl7y.mongodb.net/?retryWrites=true&w=majority'
-	);
+	const client = new MongoClient(dbURI);
 
 	try {
 		await client.connect();
