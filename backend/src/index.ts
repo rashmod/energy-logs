@@ -56,20 +56,6 @@ app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
 connectDB();
 
-// try {
-// 	const jsonData = fs.readFileSync(
-// 		path.resolve(
-// 			__dirname,
-// 			'../../frontend/src/data/lightson.new_energySaving_interview_qn_1213.json'
-// 		),
-// 		'utf-8'
-// 	);
-// 	const data = JSON.parse(jsonData);
-// 	insertData(data);
-// } catch (error) {
-// 	console.log(error);
-// }
-
 app.use('/', EnergyRoutes);
 
 app.listen(process.env.PORT, () => {
