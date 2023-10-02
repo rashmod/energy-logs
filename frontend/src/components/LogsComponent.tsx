@@ -14,7 +14,9 @@ const LogsComponent = () => {
 	const [logs, setLogs] = useState<TLog[]>();
 
 	const fetchData = async () => {
-		const response = await axios.get('http://localhost:5000/logs');
+		const response = await axios.get(
+			`${import.meta.env.VITE_BACKEND_BASE_URL}/logs`
+		);
 		const data = await response.data;
 		setLogs(data.data);
 	};

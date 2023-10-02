@@ -32,9 +32,12 @@ const ChartComponent = ({ employee }: { employee: TEmployee }) => {
 	}>();
 
 	const fetchData = useCallback(async () => {
-		const response = await axios.get('http://localhost:5000/chart', {
-			params: employee,
-		});
+		const response = await axios.get(
+			`${import.meta.env.VITE_BACKEND_BASE_URL}/chart`,
+			{
+				params: employee,
+			}
+		);
 		const data = await response.data;
 		setFetchedData(data.data);
 	}, [employee]);
