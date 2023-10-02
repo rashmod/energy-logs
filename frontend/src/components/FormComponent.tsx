@@ -34,7 +34,7 @@ const FormComponent = ({
 					type='text'
 					id='employeeName'
 					name='employeeName'
-					className='bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-black focus:border-black block w-full p-2.5'
+					className='bg-gray-50 border border-gray-600 text-gray-900 rounded-lg focus:ring-black focus:border-black block w-full p-2.5'
 					value={employee.employeeName}
 					onChange={(e) =>
 						setEmployee((prev) => ({

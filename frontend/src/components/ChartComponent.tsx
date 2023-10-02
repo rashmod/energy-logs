@@ -32,7 +32,7 @@ const ChartComponent = ({ employee }: { employee: TEmployee }) => {
 	}>();
 
 	const fetchData = useCallback(async () => {
-		const response = await axios.get('http://localhost:5000/', {
+		const response = await axios.get('http://localhost:5000/chart', {
 			params: employee,
 		});
 		const data = await response.data;

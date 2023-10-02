@@ -4,6 +4,7 @@ const Navbar = () => {
 	return (
 		<nav className='flex justify-between py-2 mb-4 border-b border-black'>
 			<NavLink to='/'>Home</NavLink>
+			<NavLink to='/logs'>Logs</NavLink>
 		</nav>
 	);
 };

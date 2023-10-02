@@ -4,13 +4,12 @@ import { Routes, Route } from 'react-router-dom';
 import ChartComponent from './components/ChartComponent';
 import FormComponent from './components/FormComponent';
 import Navbar from './components/Navbar';
+import LogsComponent from './components/LogsComponent';
 
 export type TEmployee = { employeeName: string; filter: string };
 
 function App() {
 	const [employee, setEmployee] = useState({ employeeName: '', filter: '' });
-
-	console.log(employee);
 
 	return (
 		<div className='flex flex-col items-center min-h-screen'>
@@ -30,6 +29,7 @@ function App() {
 						path='/chart'
 						element={<ChartComponent employee={employee} />}
 					/>
+					<Route path='/logs' element={<LogsComponent />} />
 				</Routes>
 			</div>
 		</div>
