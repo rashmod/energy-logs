@@ -2,13 +2,13 @@
 
 export type TData = {
 	_id: ID;
-	createdAt: AtedAt;
+	createdAt: string;
 	serialNo: string;
 	clientID: ID;
 	deviceMapID: ID;
 	devices: ID[];
 	total_kwh: number;
-	updatedAt: AtedAt;
+	updatedAt: string;
 	ac_run_hrs: number;
 	ac_fan_hrs: number;
 	algo_status: number;
@@ -21,10 +21,6 @@ export type TData = {
 
 export type ID = {
 	$oid: string;
-};
-
-export type AtedAt = {
-	$date: string;
 };
 
 export type EnergySavings = {
