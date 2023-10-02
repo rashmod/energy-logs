@@ -4,7 +4,7 @@ import LogModel from '../Model/LogModel';
 
 const router = express.Router();
 
-router.get('/', async (req: Request, res: Response) => {
+router.get('/chart', async (req: Request, res: Response) => {
 	const { employeeName, filter } = req.query;
 
 	const data = await EnergyModel.find();

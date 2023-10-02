@@ -5,6 +5,7 @@ import expressSession from 'express-session';
 
 import connectDB from './db/connectDB';
 import EnergyRoutes from './Routes/EnergyRoutes';
+import LogRoutes from './Routes/LogRoutes';
 
 declare module 'express-session' {
 	interface SessionData {
@@ -57,6 +58,7 @@ app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 connectDB();
 
 app.use('/', EnergyRoutes);
+app.use('/', LogRoutes);
 
 app.listen(process.env.PORT, () => {
 	console.log(`server running in environment: ${process.env.NODE_ENV}`);

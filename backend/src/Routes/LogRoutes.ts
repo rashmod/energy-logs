@@ -3,15 +3,10 @@ import LogModel from '../Model/LogModel';
 
 const router = express.Router();
 
-router.post('/access', async (req: Request, res: Response) => {
-	const { employeeName, filter } = req.body;
+router.get('/logs', async (req: Request, res: Response) => {
+	const logs = await LogModel.find().sort({ accessTime: -1 });
 
-	const log = await LogModel.create({
-		employeeName,
-		filter,
-		accessTime: Date.now(),
-	});
-	res.status(200).json({ success: true, data: log });
+	res.status(200).json({ success: true, data: logs });
 });
 
 export default router;
